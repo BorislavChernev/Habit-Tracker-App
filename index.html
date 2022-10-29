@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="icon" href="./images/daily-planning.png" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600;700;800&display=swap"
+			rel="stylesheet"
+		/>
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+			integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+			crossorigin="anonymous"
+			referrerpolicy="no-referrer"
+		/>
+		<link rel="stylesheet" href="./style/style.css" />
+		<title>My Tasks</title>
+	</head>
+	<body>
+		<header>
+			<div class="wall">
+				<div class="main-list">
+					<h1>To-do List</h1>
+					<form class="form1">
+						<div class="f">
+							<div class="input-div">
+								<input
+									type="text"
+									class="input task-input"
+									placeholder="+ Add task to To-do List"
+								/>
+								<button class="add-button task-button" type="submit">
+									<i class="fas fa-plus-square"></i>
+								</button>
+							</div>
+							<div class="select">
+								<select name="tasks" class="filter-tasks">
+									<option value="all">All</option>
+									<option value="completed">Completed</option>
+									<option value="uncompleted">Uncompleted</option>
+								</select>
+							</div>
+						</div>
+						<div class="container">
+							<ul class="list todo-list"></ul>
+						</div>
+					</form>
+				</div>
+
+				<div class="main-list">
+					<h1>Habit Tracker</h1>
+					<form class="form2">
+						<div>
+							<div class="input-div">
+								<input
+									type="text"
+									class="input habit-input"
+									placeholder="+ Add habit to Habit Tracker"
+								/>
+								<button class="add-button habit-button" type="submit">
+									<i class="fas fa-plus-square"></i>
+								</button>
+							</div>
+							<div class="select">
+								<select name="habits" class="filter-habits">
+									<option value="all">All</option>
+									<option value="completed">Completed</option>
+									<option value="uncompleted">Uncompleted</option>
+								</select>
+							</div>
+						</div>
+
+						<div class="container">
+							<ul class="list habit-list">
+								<!--<div class="habit">
+									<div class="flex-center">
+										<img
+											class="habit-icon"
+											src="./images/habit-icons/glass-of-water.png"
+										/>
+									</div>
+									<div class="habit-p">
+										<p>This is a prototype of habit</p>
+									</div>
+									<div>
+										<div class="check flex-center">
+											<button>
+												<i class="fas fa-check"></i>
+											</button>
+										</div>
+									</div>
+									<div class="flex-center">
+										<div class="hot-streak flex-center">
+											<p class="hot-streak-number">5</p>
+
+											<img
+												class="hot-streak-icon"
+												src="./images/habit-icons/flame.png"
+												alt="flame"
+											/>
+										</div>
+									</div>
+									<div class="current-streak flex-center">
+										<div class="flex-center">
+											<p class="current-streak-number">2</p>
+											<img
+												class="current-streak-icon"
+												src="/images/habit-icons/light-bulb.png"
+												alt="light-bulb"
+											/>
+										</div>
+									</div>
+									<div>
+										<div class="trash flex-center">
+											<button>
+												<i class="fas fa-trash"></i>
+											</button>
+										</div>
+									</div>
+								</div>-->
+							</ul>
+						</div>
+					</form>
+				</div>
+
+				<div class="main-list">
+					<h1>Todo List</h1>
+					<form class="form3">
+						<div class="f">
+							<div class="input-div">
+								<input
+									type="text"
+									class="input"
+									placeholder="+ Add task to To-do List"
+								/>
+								<button class="add-button" type="submit">
+									<i class="fas fa-plus-square"></i>
+								</button>
+							</div>
+							<div class="select">
+								<select name="tasks" class="filter-tasks">
+									<option value="all">All</option>
+									<option value="completed">Completed</option>
+									<option value="uncompleted">Uncompleted</option>
+								</select>
+							</div>
+						</div>
+						<div class="container">
+							<ul class="list todo-list"></ul>
+						</div>
+					</form>
+				</div>
+			</div>
+		</header>
+		<script src="/js/todoList.js"></script>
+		<script src="/js/habitTracker.js"></script>
+	</body>
+</html>
