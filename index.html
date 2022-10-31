@@ -46,8 +46,20 @@
 								</select>
 							</div>
 						</div>
-						<div class="container">
-							<ul class="list todo-list"></ul>
+						<div class="flex-center">
+							<ul class="list todo-list">
+								<!--<div class="task">
+									<button class="complete-btn">
+										<i class="fas fa-check"></i>
+									</button>
+									
+									<li class="task-item">Alo pronto bqlo alonto</li>
+
+									<button class="delete-btn">
+										<i class="fas fa-trash"></i>
+									</button>
+								</div>-->
+							</ul>
 						</div>
 					</form>
 				</div>
@@ -75,89 +87,46 @@
 							</div>
 						</div>
 
-						<div class="container">
-							<ul class="list habit-list">
-								<!--<div class="habit">
-									<div class="flex-center">
-										<img
-											class="habit-icon"
-											src="./images/habit-icons/glass-of-water.png"
-										/>
-									</div>
-									<div class="habit-p">
-										<p>This is a prototype of habit</p>
-									</div>
-									<div>
-										<div class="check flex-center">
-											<button>
-												<i class="fas fa-check"></i>
-											</button>
-										</div>
-									</div>
-									<div class="flex-center">
-										<div class="hot-streak flex-center">
-											<p class="hot-streak-number">5</p>
-
-											<img
-												class="hot-streak-icon"
-												src="./images/habit-icons/flame.png"
-												alt="flame"
-											/>
-										</div>
-									</div>
-									<div class="current-streak flex-center">
-										<div class="flex-center">
-											<p class="current-streak-number">2</p>
-											<img
-												class="current-streak-icon"
-												src="/images/habit-icons/light-bulb.png"
-												alt="light-bulb"
-											/>
-										</div>
-									</div>
-									<div>
-										<div class="trash flex-center">
-											<button>
-												<i class="fas fa-trash"></i>
-											</button>
-										</div>
-									</div>
-								</div>-->
-							</ul>
+						<div class="flex-center">
+							<ul class="list habit-list"></ul>
 						</div>
 					</form>
 				</div>
 
 				<div class="main-list">
-					<h1>Todo List</h1>
+					<h1>Current Task</h1>
 					<form class="form3">
-						<div class="f">
-							<div class="input-div">
-								<input
-									type="text"
-									class="input"
-									placeholder="+ Add task to To-do List"
-								/>
-								<button class="add-button" type="submit">
-									<i class="fas fa-plus-square"></i>
-								</button>
+						<div class="edit-div">
+							<div class="edit-title">
+								<p>
+									<span
+										class="textarea textarea-title"
+										role="textbox"
+										contenteditable
+									></span>
+								</p>
 							</div>
-							<div class="select">
-								<select name="tasks" class="filter-tasks">
-									<option value="all">All</option>
-									<option value="completed">Completed</option>
-									<option value="uncompleted">Uncompleted</option>
-								</select>
+
+							<div class="edit-description">
+								<p>
+									<span
+										class="textarea textarea-description"
+										role="textbox"
+										contenteditable
+									></span>
+								</p>
 							</div>
-						</div>
-						<div class="container">
-							<ul class="list todo-list"></ul>
+
+							<div class="flex-center edit-button">
+								<button type="button">Edit task</button>
+							</div>
 						</div>
 					</form>
 				</div>
 			</div>
 		</header>
-		<script src="/js/todoList.js"></script>
-		<script src="/js/habitTracker.js"></script>
+		<script src="./lib/moment.js"></script>
+		<script src="./js/todoList.js"></script>
+		<script src="./js/habitTracker.js"></script>
 	</body>
 </html>

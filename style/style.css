@@ -28,7 +28,6 @@ header {
   backdrop-filter: blur(0px);
   -webkit-backdrop-filter: blur(0px);
 }
-
 .wall::after {
   content: "";
   display: table;
@@ -59,6 +58,7 @@ h1 {
   width: 26vw;
   margin-bottom: 30px;
   padding-top: 30px;
+  min-height: 73vh;
 }
 
 .form1 {
@@ -78,20 +78,20 @@ h1 {
   justify-content: center;
   margin-left: 10px;
 }
+.input-div input:focus {
+  outline: none;
+}
 
 .input {
   width: 21vw;
   border-radius: 10px;
 }
-
 .input::-moz-placeholder {
   font-size: 1rem;
 }
-
 .input:-ms-input-placeholder {
   font-size: 1rem;
 }
-
 .input::placeholder {
   font-size: 1rem;
 }
@@ -111,7 +111,6 @@ form button {
   cursor: pointer;
   transition: 0.2s;
 }
-
 form button:hover {
   transition: 0.2s;
   background: #1eb3cd;
@@ -126,9 +125,6 @@ select {
   outline: none;
   box-shadow: none;
   border: none;
-}
-
-select {
   color: #1eb3cd;
   width: 110px;
   padding: 0.5rem;
@@ -136,33 +132,24 @@ select {
 }
 
 .select {
-  margin: 5px 0 0 1.25vw;
+  margin: 5px 0 0 1.4vw;
   position: relative;
   overflow: hidden;
   transition: 0.2s;
   border-radius: 15;
 }
 
-.container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
 .list {
   min-width: 30%;
   list-style: none;
 }
-
 .list:nth-last-child(1) {
   margin-bottom: 12px;
 }
-
 .list:nth-child(1) {
   margin-top: 20px;
 }
-
-.task {
+.list .task {
   margin: 0.8rem;
   background: white;
   color: black;
@@ -170,10 +157,14 @@ select {
   justify-content: space-between;
   align-items: center;
   transition: 0.2s;
-  border-radius: 10px;
+  border-radius: 5px 10px 10px 5px;
   width: 24vw;
   min-width: 350px;
   font-size: 18px;
+  white-space: nowrap;
+}
+.list .task li {
+  flex: 1;
 }
 
 .habit {
@@ -198,6 +189,10 @@ select {
 .habit-p {
   padding: 12px 0 0 5px;
   text-align: left;
+  overflow: hidden;
+  overflow-wrap: break-word;
+  text-overflow: ellipsis;
+  line-height: 24px;
 }
 
 .habit-item {
@@ -209,12 +204,13 @@ select {
 }
 .check button {
   width: 50px;
+  color: #7edd9f;
   border-radius: 45px;
-  border: 3px solid #1eb3cd;
+  border: 3px solid #7edd9f;
 }
 .check :hover {
   color: white;
-  background-color: #1eb3cd;
+  background-color: #7edd9f;
 }
 
 .trash {
@@ -223,23 +219,24 @@ select {
 .trash button {
   width: 50px;
   border-radius: 45px;
-  color: black;
+  color: red;
 }
 .trash :hover {
-  color: white;
+  color: rgb(255, 198, 198);
   background-color: red;
 }
 
 .hot-streak,
 .current-streak {
-  background-color: rgb(242, 242, 242);
+  background-color: rgb(235, 235, 235);
   border-radius: 10px;
   width: 80px;
   height: 40px;
+  margin: auto;
 }
 
 .current-streak {
-  margin-top: 18px;
+  margin: auto auto auto 0;
 }
 
 .hot-streak-icon {
@@ -258,42 +255,40 @@ select {
   padding: 0 0.75rem;
 }
 
-.task li {
-  flex: 1;
+.complete-btn {
+  color: #7edd9f;
+  transition: 0.2s;
+  border-radius: 5px;
+  padding: 1px 1px;
+  margin-left: 6px;
+}
+.complete-btn:hover {
+  color: white;
+  background-color: #7edd9f;
 }
 
-.delete-btn,
-.complete-btn {
-  color: white;
+.delete-btn {
+  color: red;
   border: none;
   padding: 0.6rem 1rem;
   cursor: pointer;
   font-size: 1rem;
 }
 
-.complete-btn {
-  transition: 0.2s;
-  background: #46cf76;
-}
-
-.complete-btn:hover {
-  background: #82de94;
-  transition: 0.2s;
-}
-
 .delete-btn {
   border-radius: 0 10px 10px 0;
-  background: #ff5c5d;
   transition: 0.2s;
 }
-
 .delete-btn:hover {
-  background-color: #ff8a8a;
+  background-color: red;
+  color: rgb(255, 198, 198);
   transition: 0.2s;
 }
 
 .task-item {
-  padding: 0rem 1rem;
+  padding: 0rem 5px;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .habit-item {
@@ -324,6 +319,128 @@ select {
   opacity: 0;
 }
 
+/*.edit-title,
+.edit-description {
+	margin-left: auto;
+	margin-right: auto;
+	width: 24vw;
+	textarea {
+		border: none;
+		background-color: $text-color;
+		border-radius: $task-border-radius-10;
+		width: 24vw;
+		height: 50px;
+		padding-left: 10px;
+		font-size: 22px;
+
+		&:focus {
+			outline: none;
+		}
+	}
+}
+
+.edit-title {
+	margin-bottom: 20px;
+	textarea {
+		min-height: 60px;
+		overflow-y: auto;
+		word-wrap: break-word;
+
+		&::placeholder {
+			font-size: 22px;
+		}
+	}
+}
+
+.edit-description {
+	textarea {
+		&::placeholder {
+			font-size: 18px;
+		}
+		min-height: 300px;
+	}
+	border: none;
+	background-color: $text-color;
+	border-radius: $task-border-radius-10;
+	display: flex;
+	justify-content: center;
+}*/
+.edit-div button {
+  width: 24vw;
+  border-radius: 5px;
+  margin-bottom: 30px;
+}
+
+.edit-title,
+.edit-description {
+  background-color: white;
+  width: 24vw;
+  margin: 0 auto 20px auto;
+  border-radius: 5px;
+  line-height: 30px;
+}
+
+.edit-description {
+  min-height: 450px;
+  min-height: 30vh;
+}
+
+.textarea-title {
+  max-width: 24vw;
+  min-width: 24vw;
+  max-height: 200px;
+  border-radius: 5px;
+  background-color: white;
+  color: black;
+  padding: 10px 0 0 10px;
+  display: block;
+  overflow: hidden;
+  resize: both;
+  min-height: 40px;
+  line-height: 20px;
+}
+.textarea-title:focus {
+  outline: none;
+}
+.textarea-title span {
+  margin: 20px;
+}
+
+.textarea-description {
+  max-width: 24vw;
+  min-width: 24vw;
+  max-height: 60vh;
+  min-height: 60vh;
+  border-radius: 5px;
+  background-color: white;
+  color: black;
+  padding: 10px 0 0 10px;
+  display: block;
+  resize: both;
+  overflow-y: hidden;
+  min-height: 40px;
+  line-height: 20px;
+}
+.textarea-description:focus {
+  outline: none;
+}
+.textarea-description span {
+  margin: 20px;
+  min-height: 60vh;
+}
+
+.textarea-title[contenteditable]:empty::before {
+  pointer-events: none;
+  content: "Title:";
+  color: gray;
+}
+
+.textarea-description[contenteditable]:empty::before {
+  pointer-events: none;
+  content: "Description:";
+  color: gray;
+}
+
 .flex-center {
   display: flex;
   justify-content: center;
@@ -334,4 +451,22 @@ select {
   display: flex;
   justify-content: center;
   align-items: left;
+}
+
+@media only screen and (max-width: 1449px) {
+  .main-list {
+    width: 100%;
+  }
+  .main-list form {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+  }
+  select {
+    margin-top: 10px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
 }/*# sourceMappingURL=style.css.map */
