@@ -134,6 +134,7 @@ function completeHabit(e) {
 		(x) => x.text == currParent.children[1].textContent
 	);
 
+	//FUNCTIONALITY for currentStreak and hotStreak of the habit
 	if (currParent.classList.contains('completed-habit')) {
 		if (moment(currentHabit.day).add(2, 'days').isAfter(currentDate)) {
 			currentHabit.day = currentDate.toString();
@@ -211,7 +212,6 @@ function getHabits() {
 		//CREATE habitDiv
 		const habitDiv = document.createElement('div');
 		habitDiv.classList.add('habit');
-		debugger;
 		if (currentDate.isSame(moment(habit.day), 'day')) {
 			habitDiv.classList.add('completed-habit');
 		}
@@ -282,7 +282,6 @@ function getHabits() {
 		habitDiv.appendChild(div11);
 
 		// FUNCTIONALITY for currentStreak (when loading app)
-		debugger;
 		if (!moment(habit.day).add(2, 'days').isAfter(currentDate)) {
 			habit.currentStreak = 0;
 		}

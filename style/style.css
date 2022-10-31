@@ -319,52 +319,6 @@ select {
   opacity: 0;
 }
 
-/*.edit-title,
-.edit-description {
-	margin-left: auto;
-	margin-right: auto;
-	width: 24vw;
-	textarea {
-		border: none;
-		background-color: $text-color;
-		border-radius: $task-border-radius-10;
-		width: 24vw;
-		height: 50px;
-		padding-left: 10px;
-		font-size: 22px;
-
-		&:focus {
-			outline: none;
-		}
-	}
-}
-
-.edit-title {
-	margin-bottom: 20px;
-	textarea {
-		min-height: 60px;
-		overflow-y: auto;
-		word-wrap: break-word;
-
-		&::placeholder {
-			font-size: 22px;
-		}
-	}
-}
-
-.edit-description {
-	textarea {
-		&::placeholder {
-			font-size: 18px;
-		}
-		min-height: 300px;
-	}
-	border: none;
-	background-color: $text-color;
-	border-radius: $task-border-radius-10;
-	display: flex;
-	justify-content: center;
-}*/
 .edit-div button {
   width: 24vw;
   border-radius: 5px;

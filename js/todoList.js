@@ -108,6 +108,7 @@ function filterTasks(e) {
 	});
 }
 
+//SAVES Tasks in LocalStorage
 function saveLocalTasks(task) {
 	let tasks = localStorageTasksFunc();
 	tasks.push(task);
@@ -122,7 +123,8 @@ function getTasks() {
 		if (task.completed === true) {
 			taskDiv.classList.add('completed');
 		}
-		//create completeButton
+
+		//CREATE completeButton
 		const completeButton = document.createElement('button');
 		let completeIcon = document.createElement('i');
 		completeIcon.classList.add('fas');
@@ -132,13 +134,13 @@ function getTasks() {
 		completeButton.appendChild(completeIcon);
 		taskDiv.appendChild(completeButton);
 
-		//create li
+		//CREATE li
 		const li = document.createElement('li');
 		li.textContent = task.text;
 		li.classList.add('task-item');
 		taskDiv.appendChild(li);
 
-		//create deleteButton
+		//CREATE deleteButton
 		const deleteButton = document.createElement('button');
 		let deleteIcon = document.createElement('i');
 		deleteIcon.classList.add('fas');
@@ -149,7 +151,7 @@ function getTasks() {
 		taskDiv.appendChild(deleteButton);
 		taskDiv.addEventListener('click', sendToEdit);
 
-		//append to list
+		//APPEND to list
 		taskList.appendChild(taskDiv);
 	});
 }
@@ -176,10 +178,10 @@ function localStorageTasksFunc() {
 	return tasks;
 }
 
+//SENDS clicked task to edit section
 let editListener = null;
 function sendToEdit(event) {
 	let tasks = localStorageTasksFunc();
-	debugger;
 	event.preventDefault();
 	if (event.target.tagName !== 'LI') {
 		return;
@@ -190,7 +192,6 @@ function sendToEdit(event) {
 	editTaskDescription.textContent = tasks.find(
 		(x) => x.text === event.target.textContent
 	).description;
-	debugger;
 	//let toModify = e.target.parentElement.children[1];
 
 	editListener = editButton.addEventListener('click', () => editIt(event), {
@@ -198,8 +199,8 @@ function sendToEdit(event) {
 	});
 }
 
+//EDITS the clicked task
 function editIt(e) {
-	debugger;
 	let tasks = localStorageTasksFunc();
 	let currentTask = tasks.find((x) => x.text === e.target.textContent);
 	if (editTaskDescription.textContent != '') {
@@ -207,14 +208,12 @@ function editIt(e) {
 	}
 	e.target.textContent = editTaskTitle.textContent;
 	let index = tasks.indexOf(currentTask);
-	debugger;
 	currentTask.text = editTaskTitle.textContent;
 	if (e.target.tagName == 'LI') {
 		editTaskTitle.textContent = '';
 		editTaskDescription.textContent = '';
 	}
 
-	debugger;
 	tasks[index] = currentTask;
 	localStorage.setItem('tasks', JSON.stringify(tasks));
 	editButton.removeEventListener('click', editListener);

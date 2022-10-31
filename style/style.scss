@@ -1,6 +1,6 @@
 $text-color: white;
 $trivial-color: #ff78fa;
-$side-color: #1eb3cd; //1eb3cd
+$main-color: #1eb3cd; //1eb3cd
 $task-border-radius-15: 15px;
 $task-border-radius-10: 10px;
 $task-border-radius-5: 5px;
@@ -19,7 +19,7 @@ $transition-time: 0.2s;
 }
 
 body {
-	background-image: linear-gradient(120deg, $trivial-color, $side-color);
+	background-image: linear-gradient(120deg, $trivial-color, $main-color);
 	color: $text-color;
 	font-family: 'Poppins', 'sans-serif';
 	min-height: 100vh;
@@ -119,14 +119,14 @@ form button {
 
 form button {
 	margin-left: -7px;
-	color: $side-color;
+	color: $main-color;
 	background: $text-color;
 	cursor: pointer;
 	transition: $transition-time;
 
 	&:hover {
 		transition: $transition-time;
-		background: $side-color;
+		background: $main-color;
 		color: $text-color;
 	}
 }
@@ -140,7 +140,7 @@ select {
 	box-shadow: none;
 	border: none;
 
-	color: $side-color;
+	color: $main-color;
 	width: 110px;
 	padding: 0.5rem;
 	cursor: pointer;
@@ -342,53 +342,6 @@ select {
 	opacity: 0;
 }
 
-/*.edit-title,
-.edit-description {
-	margin-left: auto;
-	margin-right: auto;
-	width: 24vw;
-	textarea {
-		border: none;
-		background-color: $text-color;
-		border-radius: $task-border-radius-10;
-		width: 24vw;
-		height: 50px;
-		padding-left: 10px;
-		font-size: 22px;
-
-		&:focus {
-			outline: none;
-		}
-	}
-}
-
-.edit-title {
-	margin-bottom: 20px;
-	textarea {
-		min-height: 60px;
-		overflow-y: auto;
-		word-wrap: break-word;
-
-		&::placeholder {
-			font-size: 22px;
-		}
-	}
-}
-
-.edit-description {
-	textarea {
-		&::placeholder {
-			font-size: 18px;
-		}
-		min-height: 300px;
-	}
-	border: none;
-	background-color: $text-color;
-	border-radius: $task-border-radius-10;
-	display: flex;
-	justify-content: center;
-}*/
-
 .edit-div {
 	button {
 		width: 24vw;
@@ -486,7 +439,6 @@ select {
 
 //MEDIA QUERIES
 
-//TABLETS && PHONES
 @media only screen and (max-width: 1449px) {
 	.main-list {
 		width: 100%;
